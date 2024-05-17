@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="FR-fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body{
+            
+            
+            background-color: ;
+
+            padding-left: 7%;
+            padding-right: 13%;
+            
+        }
+
+
+        ul{
+            list-style: none;
+        }
+        .res{
+            display: flex;
+            list-style: none;
+            margin-left: 70%;
+            margin-top: 2%;
+        }
+
+        .res li{
+            margin-left: 11%;
+        }
+
+        a{
+            text-decoration: none;
+            
+        }
+
+        .profilImg{
+            margin-left: 2%;
+            margin-top: 1%;
+            height: 200px;
+            width: 200px;
+            background-color:;
+        }
+
+        .s1{
+            background-color: ;
+            margin-top: 2%;
+            display: inline-flex;
+        }
+
+        @media screen and (max-width:900px){
+            body{
+                font-size: 12px;
+                background-color: ;
+            }
+            a{font-size: 12px;}
+            .res{margin-left: 70%;}
+        } 
+        @media screen and (max-width:500px){
+            body{
+                font-size: 10px;
+                background-color: ;
+            }
+            a{font-size: 10px;}
+            .res{margin-left: 60%;}
+
+            .s2{font-size: 12px;}
+
+            
+        } 
+
+        .fa-facebook, .fa-square-twitter, .fa-square-whatsapp, .fa-linkedin{
+            font-size: 30px;
+        }
+
+        .s2:hover{
+            background-color: rgb(32, 81, 216);
+            a{
+                color: white;
+            }
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <ul class="res">
+            <button id="btn" onclick="changeTheme()">Thème Sombre</button>
+            <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a href=""><i class="fa-brands fa-square-twitter"></i></a></li>
+            <li><a href=""><i class="fa-brands fa-square-whatsapp"></i></a></li>
+            <li><a href=""><i class="fa-brands fa-linkedin"></i></a></li>
+        </ul>
+
+        <div class="profilImg">
+            <img src="https://drive.google.com/uc?id=1n9woxb44pjgBD6CosmLSu-6hh4DOJUwg" alt="" width="200px" height="200px">
+            
+            
+        </div>
+    </header>
+
+    <section class="s1" style="width: 99%; height: 500px;">
+        <div class="desc"  style="height: 100%; width: 50%; background-color: ; margin-right: 3%; margin-left: 2%;"  >
+
+            <h2> Salut! Je m'appelle <b>TIZE HERMANE</b> et vous êtes sur ma page personnelle!</h2><br>
+            <h3>Né vers les années 2000 à <b>Ngong</b>, j'ai fait les études primaires à <b>l'Ecole Publique de Sorombéo</b>, les études 
+                secondaires au <b>Lycée Bilingue de Ngong où j'ai obtenu mon baccalauréat en 2021.</b> Actuellement je suis étudiant en licence 
+                informatique à l'université de Ngaoundéré.</h3><br><br>
+
+            <div class="comp" style="display: inline-flex;">
+                <ul style="margin-left: 1%; list-style: none;">
+                    <h3>Compétences</h3>
+                    <li>Développement web</li>
+                    <li>Développement mobil</li>
+                    <li>Administration système et réseau</li>
+                </ul>
+                <ul style="margin-left: 1%; margin-right: 2%; list-style: none;">
+                    <h3>Langages</h3>
+                    <li>html/css/js/php</li>
+                    <li>Java</li>
+                    <li>C/Python</li>
+                </ul>
+                <ul style="list-style: none;">
+                    <h3>Frameworks</h3>
+                    <li>Laravel</li> 
+                    <li>Django</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="img"  style="height: 100%; width: 45%; background-color: ;">
+            <h2 style="margin-left: 20%;"> Projets réalisés!</h2>
+
+            <ul style="margin-left: 10%;">
+                
+                <li>
+                    <h3>Application mobile de Guide Touristique</h3>
+                </li>
+                <li><h3>système de Gestion des cités et des locataires</h3></li>
+                <li><h3>Application de Gestion des Commandes dans une entreprise</h3></li>
+            </ul>
+            <br>
+            <h2 style="margin-left: 20%;">Projet en cour...</h2>
+            <ul style="margin-left: 10%;">
+                <li>
+                    <h3>Plateforme d'amélioration d'apprentissage en ligne</h3>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <div style="margin-left: 35%; ">
+        <section class="s2" style="border-radius: 5%; border: 1px solid; background-color: ; width: 35%; height: 100px; margin-top: 10px; text-align: center; font-size: 25px;">
+            <br>
+            <a href="mailto:monmail@gmail.com"> Me contacter!</a>
+        </section>
+    </div>
+
+    <script langauage="javascript">
+        
+        var btn=document.getElementById("btn");
+        body=document.querySelector('body');
+
+        
+
+            function changeTheme(){
+             if (btn.innerHTML=="Thème Sombre") {
+                body.style.backgroundColor="#212023";
+                body.style.color="#bcbaca";
+                btn.innerHTML="Thème claire";
+             }else{
+                btn.innerHTML="Thème Sombre";
+                body.style.backgroundColor="white";
+             }
+            
+            }
+
+        
+        
+
+    </script>
+</body>
+</html>
