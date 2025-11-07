@@ -1,193 +1,269 @@
 <!DOCTYPE html>
-<html lang="FR-fr">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My page</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        body{
-            
-            
-            
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mon CV - Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root {
+      --main-color: #2563eb;
+      --bg-light: #ffffff;
+      --bg-dark: #1e1e1e;
+      --text-light: #f5f5f5;
+      --text-dark: #222;
+      --accent: #facc15;
+    }
 
-            padding-left: 7%;
-            padding-right: 13%;
-            
-        }
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      transition: background 0.5s, color 0.5s;
+    }
 
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 10%;
+      background-color: var(--main-color);
+      color: white;
+    }
 
-        ul{
-            list-style: none;
-        }
-        .res{
-            display: flex;
-            list-style: none;
-            margin-left: 70%;
-            margin-top: 2%;
-        }
+    header h1 {
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+    }
 
-        .res li{
-            margin-left: 11%;
-        }
+    .socials {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
 
-        a{
-            text-decoration: none;
-            
-        }
+    .socials a {
+      color: white;
+      font-size: 1.4rem;
+      transition: transform 0.3s;
+    }
 
-        .profilImg{
-            margin-left: 2%;
-            margin-top: 1%;
-            height: 200px;
-            width: 200px;
-            
-        }
+    .socials a:hover {
+      transform: scale(1.2);
+      color: var(--accent);
+    }
 
-        .s1{
-            background-color: ;
-            margin-top: 2%;
-            display: inline-flex;
-        }
+    #btn {
+      background: var(--accent);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
 
-        @media screen and (max-width:900px){
-            body{
-                font-size: 12px;
-                
-            }
-            a{font-size: 12px;}
-            .res{margin-left: 70%;}
-        } 
-        @media screen and (max-width:500px){
-            body{
-                font-size: 10px;
-                
-            }
-            a{font-size: 10px;}
-            .res{margin-left: 60%;}
+    #btn:hover {
+      background: #fcd34d;
+    }
 
-            .s2{font-size: 12px; }
+    .container {
+      padding: 2rem 10%;
+    }
 
-            .comp{font-size: 10px;}
+    .profile {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
 
-            .profilImg{width:110px; height:110px;}
+    .profile img {
+      border-radius: 50%;
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border: 4px solid var(--main-color);
+    }
 
-            .res{font-size: 11px;}
+    .info h2 {
+      margin-bottom: 0.5rem;
+    }
 
-            
-        } 
+    .info p {
+      max-width: 600px;
+      font-size: 1rem;
+      color: #555;
+    }
 
-        .fa-facebook, .fa-square-twitter, .fa-square-whatsapp, .fa-linkedin{
-            font-size: 30px;
-        }
+    .section {
+      margin-bottom: 2rem;
+    }
 
-        .s2:hover{
-            background-color: rgb(32, 81, 216);
-            a{
-                color: white;
-            }
-            
-        }
-        
-    </style>
+    .section h2 {
+      border-bottom: 3px solid var(--main-color);
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .skills, .projects, .education {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .card {
+      background-color: #f3f4f6;
+      padding: 1rem;
+      border-radius: 10px;
+      flex: 1 1 250px;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      background: #e0e7ff;
+    }
+
+    footer {
+      background-color: var(--main-color);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+    }
+
+    footer a {
+      color: var(--accent);
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    /* Dark mode */
+    body.dark {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+    }
+
+    body.dark .card {
+      background: #2d2d2d;
+    }
+
+    body.dark .card:hover {
+      background: #3f3f3f;
+    }
+
+    body.dark header {
+      background: #111827;
+    }
+
+    body.dark footer {
+      background: #111827;
+    }
+
+    @media screen and (max-width: 700px) {
+      .profile {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <ul class="res">
-            <button id="btn" onclick="changeTheme()">Thème Sombre</button>
-            <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
-            <li><a href=""><i class="fa-brands fa-square-twitter"></i></a></li>
-            <li><a href=""><i class="fa-brands fa-square-whatsapp"></i></a></li>
-            <li><a href=""><i class="fa-brands fa-linkedin"></i></a></li>
-        </ul>
+  <header>
+    <h1>Mon Portfolio</h1>
+    <ul class="socials">
+      <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+      <li><a href="#"><i class="fa-brands fa-square-twitter"></i></a></li>
+      <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+      <li><a href="#"><i class="fa-brands fa-square-whatsapp"></i></a></li>
+    </ul>
+    <button id="btn" onclick="toggleTheme()">🌙 Mode Sombre</button>
+  </header>
 
-        <div class="profilImg">
-            <img src="https://drive.google.com/uc?id=1n9woxb44pjgBD6CosmLSu-6hh4DOJUwg" alt="" width="200px" height="200px">
-            
-            
-        </div>
-    </header>
-
-    <section class="s1" style="width: 99%; height: 500px;">
-        <div class="desc"  style="height: 100%; width: 50%;  margin-right: 3%; margin-left: 2%;"  >
-
-            <h2> Salut! Je m'appelle <b>TIZE HERMANE</b> et vous êtes sur ma page personnelle!</h2><br>
-            <h3>Né vers les années 2000 à <b>Ngong</b>, j'ai fait les études primaires à <b>l'Ecole Publique de Sorombéo</b>, les études 
-                secondaires au <b>Lycée Bilingue de Ngong où j'ai obtenu mon baccalauréat en 2021.</b> Actuellement je suis étudiant en licence 
-                informatique à l'université de Ngaoundéré.</h3><br><br>
-
-            <div class="comp" style="display: inline-flex;">
-                <ul style="margin-left: 1%; list-style: none;">
-                    <h3>Compétences</h3>
-                    <li>Développement web</li>
-                    <li>Développement mobil</li>
-                    <li>Administration système et réseau</li>
-                </ul>
-                <ul style="margin-left: 1%; margin-right: 2%; list-style: none;">
-                    <h3>Langages</h3>
-                    <li>html/css/js/php</li>
-                    <li>Java</li>
-                    <li>C/Python</li>
-                </ul>
-                <ul style="list-style: none;">
-                    <h3>Frameworks</h3>
-                    <li>Laravel</li> 
-                    <li>Django</li>
-                </ul>
-            </div>
-
-        </div>
-
-        <div class="img"  style="height: 100%; width: 45%; ">
-            <h2 style="margin-left: 20%;"> Projets réalisés!</h2>
-
-            <ul style="margin-left: 10%;">
-                
-                <li>
-                    <h3>Application mobile de Guide Touristique</h3>
-                </li>
-                <li><h3>système de Gestion des cités et des locataires</h3></li>
-                <li><h3>Application de Gestion des Commandes dans une entreprise</h3></li>
-            </ul>
-            <br>
-            <h2 style="margin-left: 20%;">Projet en cour...</h2>
-            <ul style="margin-left: 10%;">
-                <li>
-                    <h3>Plateforme d'amélioration d'apprentissage en ligne</h3>
-                </li>
-            </ul>
-        </div>
+  <div class="container">
+    <section class="profile">
+      <img src="https://via.placeholder.com/200" alt="Photo de profil" />
+      <div class="info">
+        <h2>Salut, je m'appelle <span style="color: var(--main-color);">Jean Dupont</span></h2>
+        <p>Je suis un développeur full-stack passionné par la création d'applications performantes et intuitives. J’aime résoudre des problèmes complexes et apprendre de nouvelles technologies.</p>
+      </div>
     </section>
 
-    <div style="margin-left: 35%; ">
-        <section class="s2" style="border-radius: 5%; border: 1px solid;width: 35%; height: 100px; margin-top: 10px; text-align: center; font-size: 25px;">
-            <br>
-            <a href="mailto:monmail@gmail.com"> Me contacter!</a>
-        </section>
-    </div>
+    <section class="section">
+      <h2>Compétences</h2>
+      <div class="skills">
+        <div class="card">
+          <h3>Développement Web</h3>
+          <p>HTML, CSS, JavaScript, React, PHP, Laravel</p>
+        </div>
+        <div class="card">
+          <h3>Programmation</h3>
+          <p>Python, Java, C/C++, SQL</p>
+        </div>
+        <div class="card">
+          <h3>Autres</h3>
+          <p>Git, Linux, Réseaux, Docker</p>
+        </div>
+      </div>
+    </section>
 
-    <script langauage="javascript">
-        
-        var btn=document.getElementById("btn");
-        body=document.querySelector('body');
+    <section class="section">
+      <h2>Projets</h2>
+      <div class="projects">
+        <div class="card">
+          <h3>Guide Touristique Mobile</h3>
+          <p>Application Android permettant de découvrir les sites touristiques d'une région.</p>
+        </div>
+        <div class="card">
+          <h3>Gestion des Cités</h3>
+          <p>Plateforme web pour gérer les locataires et les bâtiments d'une cité universitaire.</p>
+        </div>
+        <div class="card">
+          <h3>Commande en Entreprise</h3>
+          <p>Application de gestion de commandes et de facturation pour PME.</p>
+        </div>
+      </div>
+    </section>
 
-        
+    <section class="section">
+      <h2>Formation</h2>
+      <div class="education">
+        <div class="card">
+          <h3>Licence en Informatique</h3>
+          <p>Université de Paris, 2023</p>
+        </div>
+        <div class="card">
+          <h3>Certifications</h3>
+          <p>Python avancé, AWS Cloud Essentials, React Developer</p>
+        </div>
+      </div>
+    </section>
 
-            function changeTheme(){
-             if (btn.innerHTML=="Thème Sombre") {
-                body.style.backgroundColor="#212023";
-                body.style.color="#bcbaca";
-                btn.innerHTML="Thème claire";
-             }else{
-                btn.innerHTML="Thème Sombre";
-                body.style.backgroundColor="white";
-             }
-            
-            }
+    <section class="section" style="text-align:center;">
+      <h2>Contact</h2>
+      <p>Intéressé par une collaboration ? N'hésitez pas à me contacter !</p>
+      <a href="mailto:jean.dupont@gmail.com" style="background: var(--main-color); color: white; padding: 10px 20px; border-radius: 8px; text-decoration:none; font-weight: bold;">Me Contacter</a>
+    </section>
+  </div>
 
-        
-        
+  <footer>
+    <p>&copy; 2025 Jean Dupont | Développé avec ❤️ et HTML/CSS/JS</p>
+  </footer>
 
-    </script>
+  <script>
+    function toggleTheme() {
+      const body = document.body;
+      const btn = document.getElementById("btn");
+      body.classList.toggle("dark");
+      if (body.classList.contains("dark")) {
+        btn.textContent = "☀️ Mode Clair";
+      } else {
+        btn.textContent = "🌙 Mode Sombre";
+      }
+    }
+  </script>
 </body>
 </html>
